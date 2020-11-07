@@ -1,0 +1,28 @@
+:root {
+    --neutral: white;
+    --correct: green;
+    --wrong: #CC0000;
+}
+body {
+    display: flex;
+}
+.intro-text {
+    left: 0;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 100%;
+}
+.start-btn {
+    align-items: center;
+}
+body.neutral{
+    color: var(--neutral);
+}
+body.correct {
+    background-color: var(--correct);
+}
+body.wrong {
+    background-color: var(--wrong);
+}
