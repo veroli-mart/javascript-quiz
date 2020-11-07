@@ -1,12 +1,7 @@
-:root {
-    --neutral: white;
-    --correct: green;
-    --wrong: #CC0000;
-}
 body {
     display: flex;
 }
-.intro-text {
+.intro-page {
     left: 0;
     margin-top: -100px;
     position: absolute;
@@ -16,13 +11,18 @@ body {
 }
 .start-btn {
     align-items: center;
+   
 }
-body.neutral{
-    color: var(--neutral);
-}
-body.correct {
-    background-color: var(--correct);
-}
-body.wrong {
+.start-btn:hover{ 
     background-color: var(--wrong);
+    color:black;
+}
+.btn {
+    border: 1px solid;
+    border-radius: 5px;;
+    padding: 5px 10px;
+}
+
+.timer {
+    position: absolute;
 }
