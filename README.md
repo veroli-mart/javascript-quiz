@@ -18,3 +18,5 @@ To view the website click [here](https://veroli-mart.github.io/javascript-quiz/d
 
 ## Repository
 To view the respository click [here](https://github.com/veroli-mart/javascript-quiz.git)
+
+
