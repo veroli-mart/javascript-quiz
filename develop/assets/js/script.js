@@ -22,7 +22,7 @@ var quizQuestions= [
 
     {
         q: "Inside which HTML element do we put the JavaScript?",
-        a: 3,
+        a: 1,
         choices:[
         "1. <script>",
         "2. <js>",
@@ -32,7 +32,7 @@ var quizQuestions= [
     },
     {
         q: "The size of the letter (upper or lowercase) have no difference in meaning in JavaScript.",
-        a: 2,
+        a: 3,
         choices:[
         "1. true",
         "2. who knows?!",
@@ -55,7 +55,7 @@ var remainingTime = 0;
   var timer;
   
   
-  // functions
+// functions
   
   var startTimer = function () {
     // reset quiz variables
@@ -95,7 +95,7 @@ var remainingTime = 0;
     var choicesEl = quizSectionEl.querySelector(".choices");
     choicesEl.innerHTML = "";
   
-    // display answer choices
+    // show answer choices
     for (var i = 0; i < question.choices.length; i++) {
       var answerBtn = document.createElement("button");
       answerBtn.textContent = question.choices[i];
@@ -136,7 +136,7 @@ var remainingTime = 0;
     document.getElementById("score").innerHTML = remainingTime;
     document.body.className += " end";
     var quizSectionEl = document.getElementById("quiz-page");
-    quizSectionEl.querySelector(".question").textContent = "All done!";
+    quizSectionEl.querySelector(".question").textContent = "Your Done!";
   };
   
   
