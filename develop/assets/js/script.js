@@ -2,7 +2,7 @@
 var quizQuestions= [
     { 
         q: "What is the keyword used when declaring variables that makes them private to a function?",
-        a: 3,
+        a: 2,
         choices:[
             "1. function", 
             "2. if", 
@@ -11,7 +11,7 @@ var quizQuestions= [
     },
     { 
         q:"How do you create an element using JavaScript?",
-        a: 3,
+        a: 2,
         choices:[
         "1. document.querySelector",
         "2. function()",
@@ -22,7 +22,7 @@ var quizQuestions= [
 
     {
         q: "Inside which HTML element do we put the JavaScript?",
-        a: 1,
+        a: 0,
         choices:[
         "1. <script>",
         "2. <js>",
@@ -32,7 +32,7 @@ var quizQuestions= [
     },
     {
         q: "The size of the letter (upper or lowercase) have no difference in meaning in JavaScript.",
-        a: 3,
+        a: 2,
         choices:[
         "1. true",
         "2. who knows?!",
@@ -41,7 +41,7 @@ var quizQuestions= [
     },
     {
         q: "A very useful tool used during development and debugging for printing content to the debugger is:",
-        a: 4,
+        a: 3,
         choices: [
         "1. JavaScript", 
         "2. terminal / bash", 
@@ -50,7 +50,7 @@ var quizQuestions= [
     ]
 } 
 ];
-var remainingTime = 0;
+var timeRemaining = 0;
   var currentQuestion = 0;
   var timer;
   
@@ -62,17 +62,17 @@ var remainingTime = 0;
     currentQuestion = 0;
     displayQuestion(currentQuestion);
   
-    remainingTime = 75;
-    document.getElementById("timer").innerHTML = remainingTime;
+    timeRemaining = 75;
+    document.getElementById("timer").innerHTML = timeRemaining;
   
     // show quiz page
     document.body.className = "quiz";
   
     // start timer
     timer = setInterval(function () {
-      if (remainingTime > 0) {
-        remainingTime--;
-        document.getElementById("timer").innerHTML = remainingTime;
+      if (timeRemaining > 0) {
+        timeRemaining--;
+        document.getElementById("timer").innerHTML = timeRemaining;
       } else {
         document.getElementById("timer").innerHTML = 0;
         clearInterval(timer);
@@ -96,7 +96,7 @@ var remainingTime = 0;
     choicesEl.innerHTML = "";
   
     // show answer choices
-    for (var i = 0; i < question.choices.length; i++) {
+     for (var i = 0; i < question.choices.length; i++) {
       var answerBtn = document.createElement("button");
       answerBtn.textContent = question.choices[i];
       choicesEl.appendChild(answerBtn);
@@ -111,15 +111,16 @@ var remainingTime = 0;
     }
   
     var correctAnswerIndex = quizQuestions[currentQuestion].a;
-    var correctAnswerStr = quizQuestions[currentQuestion].choices[correctAnswerIndex];
+    var correctAnswer = quizQuestions[currentQuestion].choices[correctAnswerIndex];
   
     var resultEl = document.querySelector(".last-result");
   
-    if (clickedEl.innerHTML === correctAnswerStr) {
+    if (clickedEl.innerText === correctAnswer) {
       resultEl.textContent = "Correct!"
+    
     } else {
-      remainingTime -= 10;
-      document.getElementById("timer").innerHTML = remainingTime;
+      timeRemaining -= 10;
+      document.getElementById("timer").innerHTML = timeRemaining;
       resultEl.textContent = "Wrong!"
     }
   
@@ -133,7 +134,7 @@ var remainingTime = 0;
   
   var endQuiz = function () {
     clearInterval(timer);
-    document.getElementById("score").innerHTML = remainingTime;
+    document.getElementById("score").innerHTML = timeRemaining;
     document.body.className += " end";
     var quizSectionEl = document.getElementById("quiz-page");
     quizSectionEl.querySelector(".question").textContent = "Your Done!";
@@ -161,7 +162,7 @@ var remainingTime = 0;
     var initials = document.getElementById("initials").value;
     var score = {
       initials: initials,
-      score: remainingTime
+      score: timeRemaining
     };
   
     // push it onto the array of high scores
@@ -172,7 +173,7 @@ var remainingTime = 0;
       return b.score - a.score;
     });
   
-    // store in localStorage
+    // store scores in localStorage
     localStorage.setItem("highScores", JSON.stringify(highScores));
   
     // clear the initials input field
@@ -187,7 +188,7 @@ var remainingTime = 0;
     // if the timer is running, clear it
     if (timer !== null) {
       clearInterval(timer);
-      remainingTime = 0;
+      timeRemaining = 0;
       document.getElementById("timer").innerHTML = 0;
     }
   
