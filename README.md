@@ -14,7 +14,7 @@ When you load your screen, the first thing you should be greeted is below:
 ![JavaScript Quizzicle](./develop/assets/images/js-quiz.png)
 
 ## Website
-To view the website click [here]("")
+To view the website click [here](https://veroli-mart.github.io/javascript-quiz/develop)
 
 ## Repository
-To view the respository click [here]("")
+To view the respository click [here](https://github.com/veroli-mart/javascript-quiz.git)
