@@ -1,28 +1,98 @@
-body {
+*{
+    padding: 0;
+  }
+  html{
+    font: 'Montserrat', 'Roboto' sans-serif;
+    font-size: 20px;
+  }
+  a{
+    text-decoration: none;
+    color: green;
+  }
+  header{
+    padding: .5em 1em;
+    margin-bottom: 2em;
     display: flex;
-}
-.intro-page {
-    left: 0;
-    margin-top: -100px;
-    position: absolute;
+    justify-content: space-between;
+  }
+  
+  main{
+    width: 75%;
+    margin: 0 auto;
+  }
+  
+  /* button styles */
+  button{
+    background-color: green;
+    color: #fff;
+    font-size: .9em;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button:hover{
+    background-color: lightgreen;
+    color: black;
+  }
+  
+  
+  /* hide some sections by default */
+  main section,
+  .final-score,
+  .end .choices{
+    display: none;
+  }
+  
+  .scores header{
+    visibility: hidden;
+  }
+  
+  /* show sections based on the class applied to <main> */
+  .start #start-page,
+  .quiz #quiz-page,
+  .scores #high-score-page,
+  .end .final-score{
+    display: block;
+  } 
+  
+  
+  /* start page styles */
+  #start-page{
     text-align: center;
-    top: 40%;
-    width: 100%;
-}
-.start-btn {
-    align-items: center;
-   
-}
-.start-btn:hover{ 
-    background-color: var(--wrong);
-    color:black;
-}
-.btn {
-    border: 1px solid;
-    border-radius: 5px;;
-    padding: 5px 10px;
-}
+  }
+  #start-page p{
+    margin-bottom: 1em;
+  }
+  
+  
+  /* quiz page styles */
+  .question{
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .choices{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
 
-.timer {
-    position: absolute;
+  .last-result{
+    font-size: 25px;
+    font-style: italic;
+  }
+  #quiz-page .choices button{
+    text-align: left;
+    margin: 6px 0;
+  }
+  
+  .final-score input{
+    font-size: 1em;
+    padding: 4px 8px;
+  }
+  
+  /* high scores page styles */
+ol{
+    background-color:lightgrey;
 }

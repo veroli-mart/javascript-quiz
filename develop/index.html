@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="assets/js/script.js"></script>
-    <title>JavaScript Quiz</title>
-</head>
-<body>
-   <!-- header (high score and timer) section-->
-   <header> 
-    <h3 id="high-score"> View High Scores</h3>
-    <div class="timer">Timer: <span id="time-remaining"></span></div>
-</header>
-    <!-- main page -->
-    <main> 
-        <section class="intro-page" id="intro-page">
-    <h1> Welcome to JavaScript Quizzicle!</h1>
-    <p>In this quiz, you'll be asked a series of questions based on JavaScript.
-    </p>
-    <p>This quiz is timed! For every answer you get wrong, 10 seconds will be deducted, so be quick on your feet! Good luck!
-    </p>
-    <p>Click 'start' to begin</p>
-    <button class="btn" id="start-btn">Start</button>
-</section>
 
-</main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>JavaScript Challenge</title>
+  </head>
 
-    
-    <div class="container">
-        <div id="question-container">
-            <!-- <div id="question">Question</div> -->
-            <div id="answer-buttons" class="btn-grid"></div>
-        
+  <body class="start">
+    <header>
+      <div class="high-score-link"><a href="#">View high scores</a></div>
+      <div class="time-container">Time: <span id="timer">0</span></div>
+    </header>
+
+    <main>
+      <section id="start-page">
+        <h1>Welcome to JavaScript Quizzicle!</h1>
+        <p>In this quiz, you'll be asked a series of questions based on JavaScript.
+        <p>This quiz is timed! For every answer you get wrong, 10 seconds will be deducted, so be quick on your feet! Good luck!</p>
+        <p>Click 'Start Quiz' to begin</p>
+        <button id="startBtn">Start Quiz</button>
+      </section>
+      <section id="quiz-page">
+        <p class="question"></p>
+        <div class="choices"></div>
+        <div class="final-score">
+          <p>Your final score is <span id="score"></span>.</p>
+          <p>Enter initials:
+            <input type="text" name="initials" id="initials" placeholder="Enter Your Initials" />
+            <button id="save-score">Submit</button>
+          </p>
         </div>
-    </div>
-</body>
+        <div class="last-result"></div>
+      </section>
+      <section id="high-score-page">
+        <h2>High scores</h2>
+        <ol class="high-scores"></ol>
+        <button id="back-to-start">Go back</button> <button id="clear-scores">Clear high scores</button>
+      </section>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+
 </html>
