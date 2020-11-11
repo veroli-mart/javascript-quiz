@@ -6,7 +6,7 @@ var quizQuestions= [
         choices:[
             "1. function", 
             "2. if", 
-            "3. var"
+            "3. var",
         ]
     },
     { 

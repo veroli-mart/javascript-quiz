@@ -50,7 +50,7 @@
   .start #start-page,
   .quiz #quiz-page,
   .scores #high-score-page,
-  .end .final-score{
+  .end  .final-score{
     display: block;
   } 
   
